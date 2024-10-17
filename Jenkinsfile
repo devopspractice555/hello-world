@@ -16,21 +16,21 @@ pipeline {
                     // Optionally set the MAVEN_OPTS if needed
                     env.MAVEN_OPTS = "-Xmx1024m"
                 }
-                sh 'maven clean install'
+                sh 'mvn clean install'
             }
         }
         
         stage('Test') {
             steps {
                 // Run Maven tests
-                sh 'maven test'
+                sh 'mvn test'
             }
         }
         
         stage('Package') {
             steps {
                 // Package the application
-                sh 'maven package'
+                sh 'mvn package'
             }
         }
         
