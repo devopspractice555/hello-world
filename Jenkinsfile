@@ -41,7 +41,7 @@ pipeline {
         //         // Example: sh 'scp target/my-app.war user@server:/path/to/deploy'
         //     }
         // }
-    }
+    
 
    
     }
