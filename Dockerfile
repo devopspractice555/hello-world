@@ -1,6 +1,9 @@
 # Pull base image 
 FROM tomcat:8-jre8 
 
-# Maintainer 
-MAINTAINER "ptr@gmail.com" 
-COPY ./webapp.war /usr/local/tomcat/webapps/
+COPY ./*.war /usr/local/tomcat/webapps/
+# Expose the port on which Tomcat runs
+EXPOSE 8080
+
+# Start Tomcat
+CMD ["catalina.sh", "run"]
