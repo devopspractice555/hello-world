@@ -43,7 +43,12 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
+            
                     sh 'docker build -t simple-webpage .'
+                    sh 'docker tag simple-webpage:1 pt1212/cicd:2'
+                    sh ''docker login -u pt1212 -p DevOps@123'
+                    sh 'docker push pt1212/cicd:2'
+'
                    
                 }
             }
@@ -52,6 +57,7 @@ pipeline {
         //     steps {
         //         script {
         //             sh 'docker run -d -p 8085:8085 simple-webpage'
+        
         //         }
         //     }
         // }
