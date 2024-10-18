@@ -39,13 +39,7 @@ pipeline {
             }
         }
         
-        // stage('Deploy') {
-        //     steps {
-        //         // Optional: Add your deployment steps here
-        //         echo 'Deploying the application...'
-        //         // Example: sh 'scp target/my-app.war user@server:/path/to/deploy'
-        //     }
-        // }
+        
         stage('Build Docker Image') {
             steps {
                 script {
@@ -53,10 +47,17 @@ pipeline {
                 }
             }
         }
-        stage('Run Docker Container') {
+        // stage('Run Docker Container') {
+        //     steps {
+        //         script {
+        //             sh 'docker run -d -p 8085:8085 simple-webpage'
+        //         }
+        //     }
+        // }
+        stage('Deploy pods on K8S cluster') {
             steps {
                 script {
-                    sh 'docker run -d -p 8085:8085 simple-webpage'
+                    sh 'kubectl get nodes'
                 }
             }
         }
