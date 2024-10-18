@@ -16,9 +16,9 @@ spec:
    spec:
      containers:
      - name: simple-webpage
-       image: simple-webpage
+       image: pt1212/cicd:2
        ports:
-       - containerPort: 80
+       - containerPort: 90
  strategy:
    type: RollingUpdate
    rollingUpdate:
