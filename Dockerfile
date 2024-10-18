@@ -3,7 +3,7 @@ FROM tomcat:8-jre8
 
 COPY ./*.war /usr/local/tomcat/webapps/
 # Expose the port on which Tomcat runs
-EXPOSE 8082
+EXPOSE 8085
 
 # Start Tomcat
 CMD ["catalina.sh", "run"]
