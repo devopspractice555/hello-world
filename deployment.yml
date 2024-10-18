@@ -16,7 +16,7 @@ spec:
    spec:
      containers:
      - name: simple-webpage
-       image: pt1212/cicd:2
+       image: pt1212/cicd:4
        ports:
        - containerPort: 90
  strategy:
