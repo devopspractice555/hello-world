@@ -56,7 +56,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    sh 'docker run -d -p 8082:80 simple-webpage'
+                    sh 'docker run -d -p 8080:80 simple-webpage'
                 }
             }
         }
