@@ -48,7 +48,6 @@ pipeline {
                     sh 'docker tag simple-webpage:1 pt1212/cicd:2'
                     sh 'docker login -u pt1212 -p DevOps@123'
                     sh 'docker push pt1212/cicd:2'
-'
                    
                 }
             }
