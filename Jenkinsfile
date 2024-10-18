@@ -46,6 +46,21 @@ pipeline {
         //         // Example: sh 'scp target/my-app.war user@server:/path/to/deploy'
         //     }
         // }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    sh 'docker build -t simple-webpage .'
+                }
+            }
+        }
+        stage('Run Docker Container') {
+            steps {
+                script {
+                    sh 'docker run -d -p 8082:80 simple-webpage'
+                }
+            }
+        }
+
     
 
    
