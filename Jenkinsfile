@@ -44,6 +44,7 @@ pipeline {
             steps {
                 script {
                     sh 'docker build -t simple-webpage .'
+                   
                 }
             }
         }
@@ -57,7 +58,7 @@ pipeline {
         stage('Deploy pods on K8S cluster') {
             steps {
                 script {
-                    sh 'kubectl get nodes'
+                    sh 'kubectl create -f deployment.yml'
                 }
             }
         }
