@@ -5,7 +5,7 @@ metadata:
  labels:
    app: simple-webpage
 spec:
- replicas: 3
+ replicas: 2
  selector:
    matchLabels:
      app: simple-webpage
@@ -16,7 +16,7 @@ spec:
    spec:
      containers:
      - name: simple-webpage
-       image: pt1212/cicd:5
+       image: pt1212/cicd:6
        ports:
        - containerPort: 90
  strategy:
