@@ -63,7 +63,7 @@ pipeline {
         stage('Deploy pods on K8S cluster') {
             steps {
                 script {
-                    sh 'kubectl create -f deployment.yml'
+                    sh 'kubectl apply -f deployment.yml'
                 }
             }
         }
